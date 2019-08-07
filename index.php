@@ -6,7 +6,7 @@
 </body>
 </html>
 <?php
-	require "M3U-Filter/parser.php";
+	require "parser.php";
 	if ( isset( $_GET['m3uurl'] ) ) {
 		$url = $_GET['m3uurl'];
 		parse_m3u($url);

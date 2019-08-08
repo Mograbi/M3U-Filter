@@ -1,4 +1,6 @@
 .checkbox-grid li {
     display: inline-block;
     width: 20%;
+    border: 0.5px solid black;
+    margin: auto;
   }

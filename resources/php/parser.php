@@ -50,10 +50,10 @@
             }
             //$m3uitem->print();
             if (array_key_exists($m3uitem->group, $groups_map)) {
-                array_push($groups_map[$m3uitem->group], $m3uitem);
+                array_push($groups_map[$m3uitem->group], json_encode($m3uitem));
             }
             else {
-                $groups_map[$m3uitem->group] = array($m3uitem);
+                $groups_map[$m3uitem->group] = array(json_encode($m3uitem));
             }
 
         }

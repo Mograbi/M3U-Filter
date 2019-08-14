@@ -15,22 +15,22 @@
 				<?php
                     require "../resources/php/parser.php";
 					ksort($map);
-					foreach (array_keys($map) as $key => $group) {
-                        echo "<div class=\"dropdown\">
-                            <button class=\"dropbtn\">$group</button>
-                            <div class=\"dropdown-content\">";
-                        
-                        if (array_key_exists($group, $map)) {
-                            foreach ($map[$group] as $m3uitem) {
-                                $name = json_decode($m3uitem)->name;
-                                echo "<a href=\"#\">$name</a><br>";
-                            }
-                        }
-                        echo "</div></div>";
-						//echo "<li><div class=\"group-div\"><input type=\"checkbox\" class=\"group\" id=\"$group\" name=\"check_list[]\" value=\"$group\"><span style=\"font-size: 18px;\">$group</span></div></li>";
-					}
-					echo "<br><input type=\"submit\" name=\"submit\" value=\"Submit\"/>";
-				?>
+					foreach (array_keys($map) as $key => $group) : ?>
+						<div class="dropdown">
+                        	<button class="dropbtn"><?php echo $group ?></button>
+                            <div class="dropdown-content">
+							<?php 
+                        		if (array_key_exists($group, $map)) {
+                            		foreach ($map[$group] as $m3uitem) {
+                                		$name = json_decode($m3uitem)->name;
+                                		echo "<a href=\"#\">$name</a><br>";
+                            		}
+								}
+							?>
+                        	</div>
+						</div>
+					<?php endforeach ?>
+					<br><input type="submit" name="submit" value="Submit"/>
 				</form>
 			</ul>
 			<?php
